@@ -965,6 +965,44 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 .proof-mark{color:#fff4b0;font-weight:900;letter-spacing:.6px}
 @media(max-width:560px){.hero-proof{font-size:.7rem;gap:7px;margin-top:10px}}
 
+
+/* Looping arcade slash across the hero title. */
+.hero-title-wrap{position:relative;isolation:isolate}
+.hero-title-wrap h1{position:relative;z-index:2}
+.hero-slash{position:absolute;z-index:3;left:-18%;top:49%;width:136%;height:8px;border-radius:999px;pointer-events:none;opacity:0;transform:rotate(-17deg) translateX(-118%);background:linear-gradient(90deg,transparent 0%,rgba(255,76,57,.12) 9%,#e31b23 25%,#ff4c39 40%,#fff1a6 51%,#ffd233 58%,#ff4c39 76%,rgba(227,27,35,.14) 91%,transparent 100%);box-shadow:0 0 9px rgba(255,210,51,.95),0 0 24px rgba(255,76,57,.82),0 0 46px rgba(255,76,57,.32);clip-path:polygon(0 42%,100% 0,97% 100%,0 65%);mix-blend-mode:screen;animation:heroSlashRun 2.8s cubic-bezier(.62,0,.2,1) infinite}
+.hero-slash::after{content:"";position:absolute;left:11%;top:50%;width:64%;height:2px;border-radius:99px;background:linear-gradient(90deg,transparent,#fff8cf 42%,transparent);filter:blur(.5px);transform:translateY(-50%)}
+@keyframes heroSlashRun{0%,15%{opacity:0;transform:rotate(-17deg) translateX(-118%)}24%{opacity:.92}42%{opacity:.98}61%{opacity:.85}78%,100%{opacity:0;transform:rotate(-17deg) translateX(118%)}}
+@media (max-width:560px){.hero-slash{top:48%;height:6px;left:-24%;width:148%}}
+@media (prefers-reduced-motion:reduce){.hero-slash{animation:none;opacity:0}}
+
+
+/* Small staggered slash pass across every product card. */
+.card-slash{position:absolute!important;z-index:4!important;left:-62%;top:25%;width:126%;height:4px;border-radius:999px;pointer-events:none;opacity:0;transform:rotate(-18deg) translateX(-118%);background:linear-gradient(90deg,transparent 0%,rgba(255,76,57,.1) 14%,#e31b23 31%,#ff4c39 44%,#fff1a6 53%,#ffd233 62%,rgba(255,76,57,.12) 90%,transparent 100%);box-shadow:0 0 7px rgba(255,210,51,.8),0 0 18px rgba(255,76,57,.55);clip-path:polygon(0 38%,100% 0,97% 100%,0 64%);mix-blend-mode:screen;animation:cardSlashRun 5.6s cubic-bezier(.62,0,.2,1) infinite}
+.card-slash::after{content:"";position:absolute;left:22%;top:50%;width:45%;height:1px;border-radius:99px;background:#fff8cf;filter:blur(.35px);transform:translateY(-50%)}
+#productGrid .card:nth-child(2) .card-slash{animation-delay:.55s}#productGrid .card:nth-child(3) .card-slash{animation-delay:1.1s}#productGrid .card:nth-child(4) .card-slash{animation-delay:1.65s}#productGrid .card:nth-child(5) .card-slash{animation-delay:2.2s}#productGrid .card:nth-child(6) .card-slash{animation-delay:2.75s}#productGrid .card:nth-child(7) .card-slash{animation-delay:3.3s}#productGrid .card:nth-child(8) .card-slash{animation-delay:3.85s}#productGrid .card:nth-child(9) .card-slash{animation-delay:4.4s}#productGrid .card:nth-child(10) .card-slash{animation-delay:4.95s}
+@keyframes cardSlashRun{0%,67%{opacity:0;transform:rotate(-18deg) translateX(-118%)}72%{opacity:.82}79%{opacity:.92}88%,100%{opacity:0;transform:rotate(-18deg) translateX(118%)}}
+@media (max-width:640px){.card-slash{height:3px;top:24%;box-shadow:0 0 6px rgba(255,210,51,.7),0 0 14px rgba(255,76,57,.45)}}
+@media (prefers-reduced-motion:reduce){.card-slash{animation:none;opacity:0}}
+
+
+/* Premium product CTAs: clearer hierarchy, better affordance, and a polished disabled state. */
+.card .card-cta{width:100%;min-height:52px;border-radius:14px;letter-spacing:.15px}
+.card .btn-green.card-cta{justify-content:space-between;padding:11px 13px 11px 17px;color:#fff8d0;background:linear-gradient(120deg,#ad1527 0%,#e33132 45%,#ffb52d 100%);border-color:rgba(255,210,51,.42);box-shadow:0 12px 28px -14px rgba(255,76,57,.92),inset 0 1px 0 rgba(255,255,255,.2)}
+.card .btn-green.card-cta::before{content:"";position:absolute;inset:2px;border-radius:12px;border:1px solid rgba(255,255,255,.16);pointer-events:none}
+.card .btn-green.card-cta:hover{transform:translateY(-4px);filter:saturate(1.12) brightness(1.06);box-shadow:0 18px 34px -14px rgba(255,76,57,.95),0 0 24px -16px rgba(255,210,51,.9)}
+.cta-main{display:inline-flex;align-items:center;gap:9px;min-width:0}.cta-icon{flex:none}.cta-arrow{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:rgba(0,0,0,.2);font-size:1.18rem;line-height:1;transition:transform .3s var(--ease-spring),background .3s}.card .btn-green.card-cta:hover .cta-arrow{transform:translate(2px,-2px) rotate(5deg);background:rgba(0,0,0,.32)}
+.card .video-sample{width:100%;min-height:38px;margin-top:10px;padding:8px 12px;border:1px solid rgba(255,210,51,.22);border-radius:11px;background:rgba(255,255,255,.035);color:#aeb6c5;letter-spacing:.25px;transition:transform .28s var(--ease-spring),border-color .28s,background .28s,color .28s,box-shadow .28s}
+.card .video-sample:hover{color:#fff4b0;border-color:rgba(255,210,51,.6);background:rgba(255,210,51,.08);box-shadow:0 10px 20px -14px rgba(255,210,51,.8);transform:translateY(-2px)}
+.card .btn-lock.card-cta{justify-content:space-between;padding:10px 13px 10px 15px;color:#9c8585;background:linear-gradient(120deg,rgba(255,255,255,.055),rgba(38,17,20,.78));border:1px dashed rgba(198,140,140,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.card .btn-lock.card-cta .cta-state{font:800 .55rem/1 Consolas,"Courier New",monospace;letter-spacing:1px;color:#8d6d70;padding:6px 7px;border-radius:6px;background:rgba(0,0,0,.18);white-space:nowrap}
+.card .btn-lock.card-cta:hover{background:linear-gradient(120deg,rgba(255,255,255,.055),rgba(38,17,20,.78));border-color:rgba(198,140,140,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+@media(max-width:420px){.card .btn-lock.card-cta .cta-state{font-size:.48rem;letter-spacing:.7px}.card .btn-green.card-cta{padding-left:14px}}
+
+
+/* The CrossFire green-dot setting should use a real green accent, not the gold theme token. */
+.sut-val.dotgreen{color:#7ee9a2!important}
+.sut-val.dotgreen::before{background:#49e38b;box-shadow:0 0 10px rgba(73,227,139,.9)}
+
 </style>
 </head>
 <body id="top">
@@ -1080,6 +1118,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
       <div class="hero-brand-art" aria-hidden="true"></div>
       <span class="hero-badge"><span class="pdot"></span> Modules Online — Season 2026/2027</span>
       <div class="hero-proof" aria-label="Community milestone"><span class="proof-mark">500+</span><span>license keys issued to users</span></div>
+      <div class="hero-title-wrap">
       <h1 class="pixel-title">
         <span class="pixel-title-word pixel-premium" role="img" aria-label="Premium"></span>
         <span class="pixel-title-word pixel-brand" role="img" aria-label="NINJA TOOL"></span>
@@ -1091,6 +1130,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <span class="rot-word pixel-map-tools" role="img" aria-label="Map Tools"></span>
         </span>
       </h1>
+        <span class="hero-slash" aria-hidden="true"></span>
+      </div>
       <p class="lede">Advanced automation and enhanced features for your gaming experience — with <strong>built-in anti-detection</strong>, natural movement patterns and <strong>lifetime updates</strong>.</p>
       <div class="hero-note">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1199,6 +1240,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
       <!-- 1 -->
       <article class="card reveal" data-cat="bundle" data-avail="1" data-search="all in one all access auto gg summon x all auto farm auto sos auto synthesis bundle built-in anti detection safe use">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Bundle</span><span class="badge-group"><span class="badge badge-popular">Popular</span><span class="badge badge-best">Best Buy</span></span></div>
         <h3 class="tool-title tool-title-1">ALL IN ONE &amp; ALL ACCESS</h3>
         <p class="desc">One bundle with the core automation tools and exclusive SOS and Synthesis modules.</p>
@@ -1213,8 +1255,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Safe to Use</li>
         </ul>
         <div class="price-row"><span class="price">₱1,500</span><span class="usd">≈ $24</span><span class="per">/ Lifetime access</span></div>
-        <a class="btn btn-green" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener">Buy on Discord</a>
-        <button class="video-sample">
+        <a class="btn btn-green card-cta" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener"><span class="cta-main"><svg class="cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.01c.12.098.246.198.373.292a.077.077 0 01-.007.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Buy on Discord</span></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
+        <button type="button" class="video-sample">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffd233" stroke-width="1.8"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#ffd233"/></svg>
           Video Sample
         </button>
@@ -1222,6 +1264,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
       <!-- 2 -->
       <article class="card reveal" data-cat="utility" data-avail="1" data-search="auto gg auto create auto summon auto walk pillar melee mode spas mode farm damage built-in anti detection safe use">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Utility</span></div>
         <h3 class="tool-title tool-title-2">AUTO GG</h3>
         <p class="desc">Automatic creation and summoning with guided walking to the pillar.</p>
@@ -1234,8 +1277,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Safe to Use</li>
         </ul>
         <div class="price-row"><span class="price">₱800</span><span class="usd">≈ $13</span><span class="per">/ Lifetime access</span></div>
-        <a class="btn btn-green" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener">Buy on Discord</a>
-        <button class="video-sample">
+        <a class="btn btn-green card-cta" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener"><span class="cta-main"><svg class="cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.01c.12.098.246.198.373.292a.077.077 0 01-.007.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Buy on Discord</span></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
+        <button type="button" class="video-sample">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffd233" stroke-width="1.8"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#ffd233"/></svg>
           Video Sample
         </button>
@@ -1243,6 +1286,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
 
       <article class="card reveal" data-cat="bundle" data-avail="1" data-search="auto farm bundle all ofca farm all godzone farm all forbidden zone farm built-in anti detection safe use">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Bundle</span></div>
         <h3 class="tool-title tool-title-3">AUTO FARM BUNDLE</h3>
         <p class="desc">A complete farm bundle for OFCA, GodZone, and Forbidden Zone maps.</p>
@@ -1254,8 +1298,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Safe to Use</li>
         </ul>
         <div class="price-row"><span class="price">₱1,000</span><span class="usd">≈ $16</span><span class="per">/ Lifetime access</span></div>
-        <a class="btn btn-green" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener">Buy on Discord</a>
-        <button class="video-sample">
+        <a class="btn btn-green card-cta" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener"><span class="cta-main"><svg class="cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.01c.12.098.246.198.373.292a.077.077 0 01-.007.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Buy on Discord</span></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
+        <button type="button" class="video-sample">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffd233" stroke-width="1.8"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#ffd233"/></svg>
           Video Sample
         </button>
@@ -1263,6 +1307,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
       <!-- 3 -->
       <article class="card reveal" data-cat="utility" data-avail="1" data-search="auto summon ninja fast summon summon count auto hit reload built-in anti detection safe use">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Utility</span></div>
         <h3 class="tool-title tool-title-4">AUTO SUMMON / NINJA</h3>
         <p class="desc">Fast summon controls with summon counting and automatic hit-and-reload support.</p>
@@ -1274,8 +1319,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Safe to Use</li>
         </ul>
         <div class="price-row"><span class="price">₱400</span><span class="usd">≈ $6</span><span class="per">/ Lifetime access</span></div>
-        <a class="btn btn-green" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener">Buy on Discord</a>
-        <button class="video-sample">
+        <a class="btn btn-green card-cta" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener"><span class="cta-main"><svg class="cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.01c.12.098.246.198.373.292a.077.077 0 01-.007.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Buy on Discord</span></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
+        <button type="button" class="video-sample">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffd233" stroke-width="1.8"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#ffd233"/></svg>
           Video Sample
         </button>
@@ -1283,6 +1328,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
       <!-- 4 -->
       <article class="card reveal" data-cat="farm" data-avail="1" data-search="ofca farm individual map module built-in anti detection safe use">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Farm Module</span></div>
         <h3 class="tool-title tool-title-5">OFCA FARM</h3>
         <p class="desc">Individual OFCA farming module.</p>
@@ -1292,8 +1338,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Safe to Use</li>
         </ul>
         <div class="price-row"><span class="price">₱400</span><span class="usd">≈ $6</span><span class="per">/ each · Lifetime access</span></div>
-        <a class="btn btn-green" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener">Buy on Discord</a>
-        <button class="video-sample">
+        <a class="btn btn-green card-cta" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener"><span class="cta-main"><svg class="cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.01c.12.098.246.198.373.292a.077.077 0 01-.007.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Buy on Discord</span></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
+        <button type="button" class="video-sample">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffd233" stroke-width="1.8"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#ffd233"/></svg>
           Video Sample
         </button>
@@ -1301,6 +1347,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
       <!-- 5 -->
       <article class="card reveal" data-cat="farm" data-avail="1" data-search="forbidden zone farm fzone individual map module built-in anti detection safe use">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Farm Module</span></div>
         <h3 class="tool-title tool-title-6">FORBIDDEN ZONE FARM</h3>
         <p class="desc">Individual Forbidden Zone farming module.</p>
@@ -1310,8 +1357,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Safe to Use</li>
         </ul>
         <div class="price-row"><span class="price">₱400</span><span class="usd">≈ $6</span><span class="per">/ each · Lifetime access</span></div>
-        <a class="btn btn-green" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener">Buy on Discord</a>
-        <button class="video-sample">
+        <a class="btn btn-green card-cta" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener"><span class="cta-main"><svg class="cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.01c.12.098.246.198.373.292a.077.077 0 01-.007.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Buy on Discord</span></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
+        <button type="button" class="video-sample">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffd233" stroke-width="1.8"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#ffd233"/></svg>
           Video Sample
         </button>
@@ -1319,6 +1366,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
       <!-- 6 -->
       <article class="card reveal" data-cat="farm" data-avail="1" data-search="god zone farm godzone individual map module built-in anti detection safe use">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Farm Module</span></div>
         <h3 class="tool-title tool-title-7">GOD ZONE FARM</h3>
         <p class="desc">Individual GodZone farming module.</p>
@@ -1328,8 +1376,8 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Safe to Use</li>
         </ul>
         <div class="price-row"><span class="price">₱400</span><span class="usd">≈ $6</span><span class="per">/ each · Lifetime access</span></div>
-        <a class="btn btn-green" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener">Buy on Discord</a>
-        <button class="video-sample">
+        <a class="btn btn-green card-cta" href="https://discord.gg/DphVavCaH3" target="_blank" rel="noopener"><span class="cta-main"><svg class="cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.056 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.01c.12.098.246.198.373.292a.077.077 0 01-.007.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 00.084.029 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Buy on Discord</span></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
+        <button type="button" class="video-sample">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffd233" stroke-width="1.8"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#ffd233"/></svg>
           Video Sample
         </button>
@@ -1337,6 +1385,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
 
       <!-- 7 -->
       <article class="card reveal" data-cat="utility" data-avail="0" data-search="boss buff tool 1000 php unavailable">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Utility</span><span class="badge badge-unavailable">Unavailable</span></div>
         <h3 class="tool-title tool-title-8">BOSS BUFF TOOL</h3>
         <p class="desc">This tool is currently unavailable.</p>
@@ -1344,14 +1393,12 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>BOSS BUFF TOOL</li>
         </ul>
         <div class="price-row"><span class="price-na">₱1,000</span><span class="usd na">≈ $16</span><span class="per">/ Not Available</span></div>
-        <span class="btn btn-lock">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="#84635f" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="#84635f" stroke-width="1.8"/></svg>
-          Unavailable
-        </span>
+        <span class="btn btn-lock card-cta" aria-disabled="true"><span class="cta-main"><svg class="cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8"/></svg><span>Currently Unavailable</span></span><span class="cta-state">COMING SOON</span></span>
       </article>
 
       <!-- 8 -->
       <article class="card reveal" data-cat="utility" data-avail="0" data-search="bug card tool 1000 php unavailable">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Utility</span><span class="badge badge-unavailable">Unavailable</span></div>
         <h3 class="tool-title tool-title-9">BUG CARD TOOL</h3>
         <p class="desc">This tool is currently unavailable.</p>
@@ -1359,14 +1406,12 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>BUG CARD TOOL</li>
         </ul>
         <div class="price-row"><span class="price-na">₱1,000</span><span class="usd na">≈ $16</span><span class="per">/ Not Available</span></div>
-        <span class="btn btn-lock">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="#84635f" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="#84635f" stroke-width="1.8"/></svg>
-          Unavailable
-        </span>
+        <span class="btn btn-lock card-cta" aria-disabled="true"><span class="cta-main"><svg class="cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8"/></svg><span>Currently Unavailable</span></span><span class="cta-state">COMING SOON</span></span>
       </article>
 
       <!-- 9 -->
       <article class="card reveal" data-cat="utility" data-avail="0" data-search="arena reset tool 1000 php unavailable">
+        <span class="card-slash" aria-hidden="true"></span>
         <div class="card-top"><span class="card-cat">Utility</span><span class="badge badge-unavailable">Unavailable</span></div>
         <h3 class="tool-title tool-title-10">ARENA RESET TOOL</h3>
         <p class="desc">This tool is currently unavailable.</p>
@@ -1374,10 +1419,7 @@ h2.section-title-7{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#ffd233" opacity=".16"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#ffd233" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>ARENA RESET TOOL</li>
         </ul>
         <div class="price-row"><span class="price-na">₱1,000</span><span class="usd na">≈ $16</span><span class="per">/ Not Available</span></div>
-        <span class="btn btn-lock">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="#84635f" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="#84635f" stroke-width="1.8"/></svg>
-          Unavailable
-        </span>
+        <span class="btn btn-lock card-cta" aria-disabled="true"><span class="cta-main"><svg class="cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8"/></svg><span>Currently Unavailable</span></span><span class="cta-state">COMING SOON</span></span>
       </article>
     </div>
     <div class="no-results" id="noResults">
@@ -2055,5 +2097,5 @@ if (productCount){
 }
 
 })();
-</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a44d12184b54bc45',t:'MTc5MTA0MjI5Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</script></body>
 </html>
